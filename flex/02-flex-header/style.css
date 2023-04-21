@@ -1,19 +1,45 @@
 .header  {
   font-family: monospace;
   background: papayawhip;
+
+  /* ORIGINAL justify-content: center; *//* so instead 
+  of centering all the content and then forcing it 
+  outwards with auto margins on the logo seeing as 
+  how its two uls and a div, even though the list looks 
+  like three seperate items its treated as 1 box of 
+  three items so space-between works well for this */
+
+  /* ORIGINAL height: 80px; *//* instead of adding 
+  a height to gain some space between the logo element 
+  and the outside of the heading we coould just add 
+  some padding to the header itself*/
+
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
+  /* ORIGINAL flex: initial; *//* so all of these edits are not needed as mentioned abovet
+  this is fighting the justify-content: center; with auto margings */
   font-size: 48px;
   font-weight: 900;
   color: tomato;
   background: white;
   padding: 4px 32px;
+  /* ORIGINAL margin-left: auto;
+              margin-right: auto; */
 }
 
 ul {
   /* this removes the dots on the list items*/
+  /* ORIGINAL flex: 1; this is dumb because it cant be a item and a container at the same time lol */
   list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -23,3 +49,13 @@ a {
   /* this removes the line under the links */
   text-decoration: none;
 }
+
+/*
+.left-links {
+    display: flex;
+}
+
+.right-links {
+    display: flex;
+}
+*/ /* so these are completely not needed. editing the ul would be suffient but this works because of all the shinanigans above */
